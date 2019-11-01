@@ -1,0 +1,60 @@
+---
+title: 'Developing Data Products: Course Project Pitch Deck'
+subtitle: 'Most Popular Baby Names Across Time in Hawaii' 
+author: "Joe Barter"
+date: "10/31/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Finding Some Fun Data 
+After some research, the SSA's Popular Baby Names datasets looked like they would be an interesting dataset for this project.  
+
+**Babies in a tropical islands paradise, what is not to love?**
+
+Link to the site is https://www.ssa.gov/oact/babynames/limits.html 
+
+A quick downloaded and scouting of the "State-specific data" led to focusing in on the data from Hawaii.  
+
+This is what the data looks like: 
+```{r, echo=FALSE, comment=''}
+hiNames <- read.csv("HI.TXT", header = TRUE)
+head(hiNames)
+```
+
+## Understanding the Data 
+The data layout is pretty straightforward and allows for simple manipulation and quick data lookup.
+
+```{r, echo=TRUE, comment=''}
+str(hiNames)
+```
+
+
+## Making the Data Interactive
+The next step was to create a quick user interface that would allow the user to browse the most popular names given:
+
+* Number of **Top Names** to display
+* **Gender** of the baby
+* **Year** the baby was born
+
+The heart of the server code utilizes the user's input to look up and render the the desired baby names.  
+
+
+## Go and Play!
+Use the link https://joebarter.shinyapps.io/PopularNamesAcrossTime/ to go and play with the Shiny application.  
+
+Try the following:
+
+* Check out how the popular names changed over time.  
+* See if your name was popular in your birth year.  
+* See if your friends and family members name was popular in their birth year. 
+    + Parents
+    + Siblings
+    + Children
+* Expand the list of names for more in depth analysis.
+
+**Enjoy!**
+
